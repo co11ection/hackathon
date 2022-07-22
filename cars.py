@@ -114,14 +114,14 @@ class Cars():
         cls.send_data_to_json(data)
         return {'status':'200','msg':'liked'}
     
-    # @classmethod
-    # def dislike(cls, id):
-    #     data = cls.get_data()
-    #     car = cls.get_one_car(data,id)
-    #     index = data.index(car)
-    #     data[index].update(like = 0)
-    #     cls.send_data_to_json(data)
-    #     return {'status':'200','msg':'disliked'}
+    @classmethod
+    def dislike(cls, id):
+        data = cls.get_data()
+        car = cls.get_one_car(data,id)
+        index = data.index(car)
+        data[index].update(like = 0)
+        cls.send_data_to_json(data)
+        return {'status':'200','msg':'disliked'}
     
 
     @classmethod
@@ -137,8 +137,8 @@ class Cars():
 
 
 
-# with open(Cars.FILE,'w') as file:
-#     json.dump([], file)
+with open(Cars.FILE,'w') as file:
+    json.dump([], file)
 
 
 
